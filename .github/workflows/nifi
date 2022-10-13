@@ -1,0 +1,21 @@
+name: Assignment 5 
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout  
+          uses: actions/checkout@v2
+ 
+        - name: Set up JDK 8
+          uses: actions/setup-java@v3
+          with:
+            java-version: '8'
+            distribution: 'adopt'
+            cache: maven
+        - run: mvn test-compile -pl nifi-nar-bundles/nifi-scripting-bundle/nifi-scripting-processors -am
+        - run: mvn -pl nifi-nar-bundles/nifi-scripting-bundle/nifi-scripting-processors test -Dtest=org.apache.nifi.processors.script.TestScriptedPartitionRecord#testWhenMultiplePartitions
+        - run: mvn -pl nifi-nar-bundles/nifi-scripting-bundle/nifi-scripting-processors edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.nifi.processors.script.TestScriptedPartitionRecord#testWhenMultiplePartitions
+
+
