@@ -7,6 +7,11 @@ jobs:
     steps:
         - name: Checkout  
           uses: actions/checkout@v2
+           with:
+            repository: tibaramadhan/nifi
+            submodules: 'true'
+            #path: './depencies/vtk'
+            ref: db5b618550dd061711295f5cae8abe5f0fb4d0f0
  
         - name: Set up JDK 8
           uses: actions/setup-java@v3
