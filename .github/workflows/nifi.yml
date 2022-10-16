@@ -7,7 +7,7 @@ jobs:
     steps:
         - name: Checkout  
           uses: actions/checkout@v2
-           with:
+          with:
             repository: tibaramadhan/nifi
             submodules: 'true'
             #path: './depencies/vtk'
