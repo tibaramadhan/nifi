@@ -1,5 +1,5 @@
 name: Assignment 5 
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ci-build.log
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -11,7 +11,7 @@ jobs:
             repository: tibaramadhan/nifi
             submodules: 'true'
             #path: './depencies/vtk'
-            ref: 4a5fe698f71743d413e8342494abf33fb58001ad
+            ref: db5b618550dd061711295f5cae8abe5f0fb4d0f0
  
         - name: Set up JDK 8
           uses: actions/setup-java@v3
